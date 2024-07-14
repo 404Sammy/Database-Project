@@ -22,7 +22,7 @@ namespace Database_Project
 
     {
         string connectionString = @"Server=PCR\MSSQLSERVER1;Database=LibraryDB;Integrated Security=True;";
-        int ID;
+
         public Form1()
         {
             InitializeComponent();
@@ -70,6 +70,7 @@ namespace Database_Project
                     cmd.Parameters.AddWithValue("@Genre", genre);
                     cmd.Parameters.AddWithValue("@YearPublished", YearPublished);
                     cmd.ExecuteNonQuery();
+                    RefreshDataGrid(); // Refresh DataGridView after update
                 }
             }
 
